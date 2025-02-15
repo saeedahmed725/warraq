@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:warraq/core/services/font_services.dart';
 import 'package:warraq/core/services/locator.dart';
 import 'package:warraq/core/services/shared_prefs.dart';
 
@@ -13,10 +11,9 @@ class MyServices {
 
   Future<MyServices> init() async {
     ServiceLocator.setup();
-    FontServices.initwarraqFonts();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     await SharedPrefs.init();
-    await Future.wait([
+    await Future.wait([  // is used to wait for multiple futures to complete
       dotenv.load(fileName: ".env"),
     ]);
     return this;

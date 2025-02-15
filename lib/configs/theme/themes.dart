@@ -4,6 +4,7 @@ import 'package:warraq/core/constants/app_fonts.dart';
 import '../../core/constants/app_color.dart';
 
 class AppThemes {
+  AppThemes._();
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
@@ -31,7 +32,7 @@ class AppThemes {
       brightness: Brightness.light,
     ),
     textSelectionTheme: TextSelectionThemeData(
-        cursorColor: AppColor.kSecondaryHomeCardColor,
+        // cursorColor: AppColor.kSecondaryHomeCardColor,
         selectionColor: AppColor.kPrimaryColor.withOpacity(0.2),
         selectionHandleColor: AppColor.kPrimaryColor),
   );
